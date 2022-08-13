@@ -1,0 +1,38 @@
+.divFromLog{
+    background-color: aquamarine;
+}
+
+.divFromLog h1{
+    text-transform: uppercase;
+    color: green;
+}
+
+
+
+.divFromLog form div{
+    margin-top: 2rem;
+   
+}
+
+
+.divFromLog form div span{
+    color: blue;
+    text-decoration-line: underline;
+}
+
+input {
+    max-width: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+}
+
+.link{
+    color: green;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.link:hover{
+    color: rgb(189, 189, 39);
+}

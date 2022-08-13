@@ -1,0 +1,33 @@
+.card {
+    border-radius: 5px;
+    box-shadow: 5px 10px rgb(145, 145, 145);
+    background-color: rgb(83, 175, 89);
+    width: 17rem;
+    flex-grow: 1;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 17rem;
+    border-color: black;
+    margin-right: 3rem;
+    height: 70%;
+}
+
+.card:hover{
+    background-color: yellowgreen;
+}
+
+.card div {
+    color: white;
+    height: min-content;
+}
+
+.card button {
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+

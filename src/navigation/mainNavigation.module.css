@@ -1,0 +1,13 @@
+.link{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+
+.link:hover{
+    
+    color: rgb(77, 211, 81);
+    transform: scale(1.1);
+}
