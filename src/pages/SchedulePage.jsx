@@ -40,6 +40,7 @@ function SchedulePage(){
     function enterDrag(Setlist,list){
 
         listOverItem.current={set:Setlist,list:list};
+        //prova
 
     }
 
