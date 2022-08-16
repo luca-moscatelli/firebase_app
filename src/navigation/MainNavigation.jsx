@@ -21,7 +21,7 @@ function NavigationHeader() {
         <div
             style={{ width: "100vw", height: "60px", backgroundColor: "green",justifyContent:'center',display:'flex' }}
         >
-           {true&&<LogUserCard   email={email}/>} 
+           {true&&<div className={styles.log} ><LogUserCard  email={email}/></div>} 
 
             <div style={{ flexDirection: "row",fontSize:20,width:'60%'
             ,justifyContent:'space-around',display:'flex' }}>

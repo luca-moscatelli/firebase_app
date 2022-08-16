@@ -3,6 +3,8 @@ import styles from './userCard.module.css'
 
 function UserCard({user,removeHandle,isActive,isFilter}){
 
+    if(user==undefined) return <></>;
+
     
 
     return <div className={styles.card} style={{backgroundColor:isActive?'greenyellow':isFilter?'':'red'}}>

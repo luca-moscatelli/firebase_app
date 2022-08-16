@@ -8,22 +8,26 @@ import { auth, database } from "..";
 import { Navigate } from "react-router-dom";
 import NavigationHeader from "../navigation/MainNavigation";
 import { sendEmailVerification } from "firebase/auth";
+import { addUser } from "../utils/dbCalls";
 
 const CreateUser=(props)=>{
 
-   async function postUser(db,data){
+  //  async function postUser(db,data){
 
-        try {
-          const docRef = await addDoc(collection(db, "users",auth.currentUser.uid,"usersData"), {
-            first: data.first,
-            last: data.last,
-            born: data.born
-          });
-          console.log("Document written with ID: ", docRef.id);
-        } catch (e) {
-          console.error("Error adding document: ", e);
-        }
-    }
+  //       try {
+  //         const docRef = await addDoc(collection(db, "users",auth.currentUser.uid,"usersData"), {
+  //           first: data.first,
+  //           last: data.last,
+  //           born: data.born
+  //         });
+  //         console.log("Document written with ID: ", docRef.id);
+  //       } catch (e) {
+  //         console.error("Error adding document: ", e);
+  //       }
+  //   }
+
+
+    
 
     const name=useRef();
     const secondName=useRef();
@@ -36,7 +40,12 @@ const CreateUser=(props)=>{
         last: secondName.current.value,
         born: parseInt(bornDate.current.value)
       }
-      postUser(database,data);
+      addUser(data,collection(
+        database,
+        "users",
+        auth.currentUser.uid,
+        "usersData"
+    ));
     }
 
     var actionCodeSettings = {
