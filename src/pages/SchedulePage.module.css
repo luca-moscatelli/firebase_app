@@ -3,9 +3,8 @@
 }
 
 .main{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+    flex-wrap: wrap;
+    display: flex;
     margin-right: 10vw;
     width: auto;
     margin-left: 10vw;
@@ -23,18 +22,24 @@
     height: 1.5rem;
 }
 
+.title select{
+    width: 3rem;
+    margin-left: 30px;
+}
+
 
 .Column{
     display:flex;
     flex-direction: column;
     min-width: 20%;
-    width: auto;
+    width: 40%;
     background-color: bisque;
     align-items: center;
     padding: 3%;
     min-height: 40vh;
     border-radius: 5px;
     margin-left: 1rem;
+    margin-top: 0.5rem;
     margin-right: 1rem;
 
     
@@ -54,3 +59,4 @@
 .card{
     margin-bottom: 1rem;
 }
+
