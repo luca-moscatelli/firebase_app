@@ -223,7 +223,7 @@ function SchedulePage() {
                             .then(alert("disposizione salvata"));
                     }}
                 >
-                    salva disposizione
+                    salva spostamenti
                 </button>
                 {/* <input type={"number"} ref={nColumnDragRef}></input>
                 <button
