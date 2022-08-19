@@ -14,6 +14,8 @@ import {
 } from "firebase/firestore";
 import { auth, database } from "..";
 
+const N_schedule=5;
+
 export async function getUserFromDatabase(segmentPath) {
     const UserCol = collection(
         database,
@@ -48,13 +50,12 @@ export async function db_getNColumn() {
 }
 
 export async function db_setNcolumn(nColumn) {
-
-  const nCol=parseInt(nColumn);
+    const nCol = parseInt(nColumn);
 
     try {
         const docRef = doc(database, userPath());
 
-        await updateDoc(docRef, { n_Column: nCol});
+        await updateDoc(docRef, { n_Column: nCol });
 
         console.log("done");
     } catch (e) {
@@ -109,3 +110,13 @@ export async function getUserBornFromDatabase() {
 export function userPath() {
     return "users/" + auth.currentUser.uid;
 }
+
+export async function db_deleteUser(id) {
+   await deleteDoc(doc(database,userPath(),'usersData',id)).catch((error) => console.log(error));
+
+   for (let index = 0; index < N_schedule; index++) {
+        await deleteDoc(doc(database,userPath(),'schedule'+(index+1),id)).catch((error) => console.log(error));
+   }
+
+}
+        

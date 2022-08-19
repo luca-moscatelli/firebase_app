@@ -11,22 +11,6 @@ import { sendEmailVerification } from "firebase/auth";
 import { addUser } from "../utils/dbCalls";
 
 const CreateUser=(props)=>{
-
-  //  async function postUser(db,data){
-
-  //       try {
-  //         const docRef = await addDoc(collection(db, "users",auth.currentUser.uid,"usersData"), {
-  //           first: data.first,
-  //           last: data.last,
-  //           born: data.born
-  //         });
-  //         console.log("Document written with ID: ", docRef.id);
-  //       } catch (e) {
-  //         console.error("Error adding document: ", e);
-  //       }
-  //   }
-
-
     
 
     const name=useRef();
@@ -68,7 +52,13 @@ const CreateUser=(props)=>{
 
   }
 
-    return <div style={{width:'full',height:'full'}}><NavigationHeader/>
+    function autoFill(){
+      name.current.value='luca'
+      secondName.current.value='moscatelli'
+      bornDate.current.value=1997
+    }
+
+    return <div style={{width:'full',height:'full',marginBottom:'3rem'}}><NavigationHeader/>
        <h1 style={{textTransform:'uppercase'}}> creazione utente</h1>
         <form onSubmit={submitHandle}>
           <div>
@@ -80,6 +70,7 @@ const CreateUser=(props)=>{
          </div>
         <button  style={{marginLeft:'20px'}}>carica nuovo utente</button>
         </form>
+        <button className={styles.autoFill} onClick={autoFill}>riempi in automatico</button>
 
         
     </div>

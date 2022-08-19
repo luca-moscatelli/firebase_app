@@ -10,7 +10,7 @@ import { auth, database } from "..";
 import styles from "./GetUsers.module.css";
 import UserCard from "../component/userCard";
 import NavigationHeader from "../navigation/MainNavigation";
-import { getUserFromDatabase } from "../utils/dbCalls";
+import { db_deleteUser, getUserFromDatabase } from "../utils/dbCalls";
 
 const GetUser = () => {
     const [dbUsers, setdbUser] = useState([]);
@@ -75,7 +75,7 @@ const GetUser = () => {
     }
 
     function deleteUser(ref) {
-        deleteDoc(ref)
+      db_deleteUser(ref)
             .then(() => refreshPage())
             .catch((error) => console.log(error));
     }
@@ -104,8 +104,9 @@ const GetUser = () => {
                             user={value}
                             isActive={value.ref === cardActive}
                             isFilter={value.filter}
+                            deleteWord='elimina definitivamente'
                             removeHandle={() => {
-                                deleteUser(value.ref);
+                                deleteUser(value.id);
                             }}
                         />
                     </div>

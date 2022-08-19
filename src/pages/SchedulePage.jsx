@@ -26,11 +26,7 @@ function SchedulePage() {
     const [reserveUsers1, setReserveUsers1] = useState([]);
     const [reserveUsers2, setReserveUsers2] = useState([]);
     const [done,setDone]=useState(false);
-
     const [column, setColumn] = useState(0);
-
-
-    const prova = useRef();
 
     const itemOnDrag = useRef();
     const listOverItem = useRef();
