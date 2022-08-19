@@ -205,9 +205,9 @@ function SchedulePage() {
         );
     }
 
-    return (done&&
+    return (
         <div style={{ width: "full", height: "full" }}>
-            <NavigationHeader />
+            <NavigationHeader />{done&&<div>
             <div className={styles.title}>
                 <h1 className={styles.name}>Schedari</h1>
                 <button
@@ -257,6 +257,8 @@ function SchedulePage() {
                     if (index < column) return value;
                 })}
             </div>
+            </div>
+}
         </div>
     );
 }
