@@ -7,6 +7,7 @@ import LoginPage from "./pages/login/loginPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpPage from "./pages/login/signUpPage";
 import SchedulePage from "./pages/SchedulePage";
+import GalleryPage from "./pages/galleryPage";
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
                     <Route path="/" element={<LoginPage/>}></Route>
                     <Route path="/SignUp" element={<SignUpPage/>}></Route>
                     <Route path="/Schedule" element={<SchedulePage/>}></Route>
+                    <Route path="/gallery" element={<GalleryPage/>}></Route>
+
 
 
                 </Routes>

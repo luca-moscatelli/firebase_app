@@ -28,6 +28,8 @@ function NavigationHeader() {
                 <Link to='/addUser' className={styles.link}>  Crea utente </Link>
                 <Link to='/getUser' className={styles.link}>  Guarda utenti </Link>
                 <Link to='/Schedule' className={styles.link}>  Schedari </Link>
+                <Link to='/gallery' className={styles.link}>  galleria presonale </Link>
+
                 <LogOut/>
 
                   

@@ -107,6 +107,19 @@ export async function getUserBornFromDatabase() {
     return console.log(bornData);
 }
 
+export async function db_addPhoto(photo,collectionRef){
+    if(collectionRef==undefined) collectionRef=collection(database,userPath(),'gallery');
+    const photoDoc={url:photo};
+
+   await addDoc(collectionRef,photoDoc);
+}
+
+export async function db_getAllPhoto(){
+    const gallerySnap=await getDocs(collection(database,userPath(),'gallery'));
+    const gallery= gallerySnap.docs.map(value=>value.data());
+    return gallery;
+}
+
 export function userPath() {
     return "users/" + auth.currentUser.uid;
 }

@@ -36,32 +36,32 @@ function SchedulePage() {
 
     const usersDB = useRef([]);
 
-    const exe = [];
+    const ColumsList = [];
 
-    exe.push(
+    ColumsList.push(
         <ColumnDragAndDrop setList={setUsers} list={users} name="archivio" />
     );
-    exe.push(
+    ColumsList.push(
         <ColumnDragAndDrop
             setList={setScheduleUsers}
             list={scheduleUsers}
             name="schedario principale"
         />
     );
-    exe.push(
+    ColumsList.push(
         <ColumnDragAndDrop
             setList={setReserveUsers}
             list={reserveUsers}
             name="schedario riservato"
         />
     );
-    exe.push(
+    ColumsList.push(
         <ColumnDragAndDrop
             setList={setReserveUsers1}
             list={reserveUsers1}
             name="schedario riservato 1"
         />
-    );  exe.push(
+    );  ColumsList.push(
         <ColumnDragAndDrop
             setList={setReserveUsers2}
             list={reserveUsers2}
@@ -253,7 +253,7 @@ function SchedulePage() {
             </div>
 
             <div className={styles.main}>
-                {exe.map((value, index) => {
+                {ColumsList.map((value, index) => {
                     if (index < column) return value;
                 })}
             </div>
